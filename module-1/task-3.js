@@ -1,6 +1,28 @@
 "use strict";
 
-const ADMIN_PASSWORD = "jqueryismyjam";
+let message;
+const ENTER_PASSWORD = 'Введите пароль'
+const CANCEL_BY_USER = 'Отменено пользователем!'
+const ADMIN_PASSWORD = 'jqueryismyjam'
+const ACCESS_IS_ALLOWED = 'Добро пожаловать!'
+const ACCESS_DENIED = 'Доступ запрещен, неверный пароль!'
+const MESSAGE_IS_EMPTY = "";
+
+const userPassword = prompt(ENTER_PASSWORD, '')
+
+switch(userPassword) {
+case ADMIN_PASSWORD: message = ACCESS_IS_ALLOWED; break;
+case null: message = CANCEL_BY_USER; break;
+case MESSAGE_IS_EMPTY: message =  ACCESS_DENIED;
+default: message = ACCESS_DENIED;
+}
+
+alert(message)
+
+
+
+
+/* const ADMIN_PASSWORD = "jqueryismyjam";
 const USER_PASSWORD = prompt("Форма запроса пароля", "");
 
 let messagePassword;
@@ -20,4 +42,4 @@ switch (USER_PASSWORD) {
     break;
 }
 
-alert(USER_PASSWORD);
+alert(USER_PASSWORD); */
