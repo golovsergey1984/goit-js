@@ -26,22 +26,57 @@ userCountryDelivery =
 switch (userCountryDelivery) {
   case "Китай":
     cost = 100;
+    alert(
+      `Досавка в ` +
+        userCountryDelivery +
+        ` - возможна\nСтоимость составляет ` +
+        cost +
+        ` кредитов`
+    );
     break;
 
   case "Чили":
     cost = 250;
+    alert(
+      `Досавка в ` +
+        userCountryDelivery +
+        ` - возможна\nСтоимость составляет ` +
+        cost +
+        ` кредитов`
+    );
     break;
 
   case "Австралия":
     cost = 170;
+    alert(
+      `Досавка в ` +
+        userCountryDelivery +
+        ` - возможна\nСтоимость составляет ` +
+        cost +
+        ` кредитов`
+    );
     break;
 
   case "Индия":
     cost = 80;
+    alert(
+      `Досавка в ` +
+        userCountryDelivery +
+        ` - возможна\nСтоимость составляет ` +
+        cost +
+        ` кредитов`
+    );
     break;
 
   case "Ямайка":
     cost = 120;
+    alert(
+      `Досавка в ` +
+        userCountryDelivery +
+        ` - возможна\nСтоимость составляет ` +
+        cost +
+        ` кредитов`
+    );
     break;
 
   default:
@@ -52,11 +87,3 @@ switch (userCountryDelivery) {
     );
     break;
 }
-
-alert(
-  `Досавка в ` +
-    userCountryDelivery +
-    ` - возможна\nСтоимость составляет ` +
-    cost +
-    ` кредитов`
-);
