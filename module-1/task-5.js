@@ -29,7 +29,8 @@ switch (userCountryDelivery) {
     alert(
       `Досавка в ` +
         userCountryDelivery +
-        ` - возможна\nСтоимость составляет ` +
+        ` - возможна
+        Стоимость составляет ` +
         cost +
         ` кредитов`
     );
@@ -40,7 +41,8 @@ switch (userCountryDelivery) {
     alert(
       `Досавка в ` +
         userCountryDelivery +
-        ` - возможна\nСтоимость составляет ` +
+        ` - возможна
+        Стоимость составляет ` +
         cost +
         ` кредитов`
     );
@@ -51,7 +53,8 @@ switch (userCountryDelivery) {
     alert(
       `Досавка в ` +
         userCountryDelivery +
-        ` - возможна\nСтоимость составляет ` +
+        ` - возможна
+        Стоимость составляет ` +
         cost +
         ` кредитов`
     );
@@ -62,7 +65,8 @@ switch (userCountryDelivery) {
     alert(
       `Досавка в ` +
         userCountryDelivery +
-        ` - возможна\nСтоимость составляет ` +
+        ` - возможна
+        Стоимость составляет ` +
         cost +
         ` кредитов`
     );
@@ -73,7 +77,8 @@ switch (userCountryDelivery) {
     alert(
       `Досавка в ` +
         userCountryDelivery +
-        ` - возможна\nСтоимость составляет ` +
+        ` - возможна
+        Стоимость составляет ` +
         cost +
         ` кредитов`
     );
