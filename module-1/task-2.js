@@ -5,4 +5,5 @@ const GOODS_ORDERED = 19;
 
 if (GOODS_ORDERED > GOODS_TOTAL) {
   console.log("На складе недостаточно товаров!");
-} else console.log("Заказ оформлен, с Вами свяжется менеджер");
+} else 
+console.log("Заказ оформлен, с Вами свяжется менеджер");
