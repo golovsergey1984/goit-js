@@ -6,14 +6,13 @@ const CANCEL_BY_USER = 'Отменено пользователем!'
 const ADMIN_PASSWORD = 'jqueryismyjam'
 const ACCESS_IS_ALLOWED = 'Добро пожаловать!'
 const ACCESS_DENIED = 'Доступ запрещен, неверный пароль!'
-const MESSAGE_IS_EMPTY = "";
+
 
 const userPassword = prompt(ENTER_PASSWORD, '')
 
 switch(userPassword) {
 case ADMIN_PASSWORD: message = ACCESS_IS_ALLOWED; break;
 case null: message = CANCEL_BY_USER; break;
-case MESSAGE_IS_EMPTY: message =  ACCESS_DENIED;
 default: message = ACCESS_DENIED;
 }
 
