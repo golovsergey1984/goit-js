@@ -1,5 +1,64 @@
 "use strict";
 
+const PRINT_COUNTRY =
+  "Напишите название страны в которую нужно доставить товар";
+const CANCEL_BY_USER = "Отменено пользователем!";
+const NOT_DELIVERY = "В вашей стране доставка не доступна";
+const MESSAGE_IS_EMPTY = "Вы не указали ни одной страны";
+
+const CNINA = "Китай";
+const Chili = "Чили";
+const INDIA = "Индия";
+const JAMAICA = "Ямайка";
+const AUSTRALIA = "Австралия";
+
+let message = prompt(PRINT_COUNTRY);
+let priсe = 0;
+let countryName;
+
+if (message === null) {
+  message = CANCEL_BY_USER;
+} else if (message === "") {
+  message = MESSAGE_IS_EMPTY;
+} else {
+  countryName = message[0].toUpperCase() + message.slice(1).toLowerCase();
+
+  switch (countryName) {
+    case CNINA:
+      priсe = 100;
+      break;
+
+    case Chili:
+      priсe = 250;
+      break;
+
+    case AUSTRALIA:
+      priсe = 170;
+      break;
+
+    case INDIA:
+      priсe = 80;
+      break;
+    case JAMAICA:
+      priсe = 120;
+      break;
+    default:
+      message = NOT_DELIVERY;
+  }
+}
+
+if (priсe > 0) {
+  let PRICE_DELIVERY = `Доставка в ${countryName} будет стоить ${priсe} кредитов`;
+  message = PRICE_DELIVERY;
+}
+alert(message);
+
+
+
+
+/*
+Старая версия
+
 let cost;
 let userCountryDelivery;
 const USER_CHOICE = prompt(
@@ -92,3 +151,4 @@ switch (userCountryDelivery) {
     );
     break;
 }
+ */
