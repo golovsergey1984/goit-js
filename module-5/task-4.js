@@ -13,8 +13,15 @@ class StringBuilder {
   prepend(str) {
     this._value = str + this._value;
   }
-  pad(str) {
+  // 1й Вариант
+  /*  pad(str) {
     this._value = str + this._value + str;
+  }  */
+
+  // 2й Вариант
+  pad(str) {
+    this.append(str);
+    this.prepend(str);
   }
 }
 
