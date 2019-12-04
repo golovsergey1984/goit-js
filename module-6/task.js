@@ -87,14 +87,16 @@ const getUsersWithAge = (users, min, max) => {
 //
 //
 // Answer task # 7
-
+const calculateTotalBalance = users => users.reduce((a, b) => a + b.balance, 0);
+/* 
+Вариант 2
 const calculateTotalBalance = users => {
   const sum = users.reduce(
     (totalBalance, user) => totalBalance + user.balance,
     0,
   );
   return sum;
-};
+}; */
 
 //
 //
