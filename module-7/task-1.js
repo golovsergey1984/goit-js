@@ -1,6 +1,16 @@
 ('use strict');
 console.log('task-1');
-// Создаем переменную categories по id и сохраняем в ней соответствующий html
+const categories = document.querySelector('#categories');
+
+const res = categories.children.length;
+
+const str = [...categories.children]
+  .map(e => `${e.children[0].textContent}: ${e.children[1].children.length}`)
+  .join('\n');
+console.log(str);
+
+console.log(categories);
+/* // Создаем переменную categories по id и сохраняем в ней соответствующий html
 let categories = document.getElementById('categories');
 
 let ulCategories = categories.children.length;
@@ -30,3 +40,4 @@ for (let i = 0; i < ulCategories; i++) {
   console.log('Категория: ' + liItem);
   console.log('Количество элементов: ' + value);
 }
+ */

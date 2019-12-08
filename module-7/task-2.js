@@ -15,4 +15,5 @@ for (let item of ingredients) {
   li.innerHTML = item;
   list.appendChild(li);
 }
+
 console.log(list);
