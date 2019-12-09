@@ -12,7 +12,7 @@ function createGallery([{ preview, original, description }]) {
     li.classList.add('gallery__item');
     const a = document.createElement('a');
     a.classList.add('gallery__link');
-    /* a.setAttribute('href', item.original); */
+    a.setAttribute('href', item.original);
     const image = document.createElement('img');
     image.classList.add('gallery__image');
     list

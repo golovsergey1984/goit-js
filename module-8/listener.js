@@ -1,12 +1,15 @@
 'use strict';
 
 const item = document.querySelector('.js-gallery');
+
 item.addEventListener('click', choiceMade);
+const href = document.querySelector('a');
+
 function choiceMade(event) {
   const div = document.querySelector('.lightbox');
 
   div.classList.replace('lightbox', 'lightbox.is-open');
-
+  event.preventDefault(href);
   const img = document.querySelector('.lightbox__image');
   img.src = event.target.getAttribute('data-source');
   img.alt = event.target.getAttribute('alt');
