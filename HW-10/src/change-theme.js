@@ -20,7 +20,8 @@ function choiceMade(event) {
     refs.switch.setAttribute('checked', 'false');
     localStorage.setItem(refs.switch, 'false');
   }
-  if (localStorage.getItem(refs.switch) == 'true') {
-    refs.switch.setAttribute('checked', 'false');
-  }
+}
+if (localStorage.getItem(refs.switch) == 'true') {
+  refs.body.classList.add(Theme.DARK);
+  console.log('Привет');
 }
