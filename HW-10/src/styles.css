@@ -3,6 +3,9 @@ html {
   width: 100vw;
   overflow-x: hidden;
 }
+.red {
+  background-color: red;
+}
 
 *,
 *::before,
