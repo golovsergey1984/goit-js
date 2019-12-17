@@ -24,5 +24,4 @@ function choiceMade(event) {
 if (localStorage.getItem(refs.switch) == 'true') {
   refs.body.classList.add(Theme.DARK);
   refs.switch.setAttribute('checked', 'true');
-  console.log('Привет');
 }
