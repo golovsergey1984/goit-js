@@ -43,10 +43,10 @@ function updateClockFace(time, timer) {
 
 new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('Dec 22, 2019'),
+  targetDate: new Date('Dec 22, 2024'),
 });
 
 new CountdownTimer({
   selector: '#timer-2',
-  targetDate: new Date('Mar 23, 2021'),
+  targetDate: new Date('Mar 23, 2025'),
 });
