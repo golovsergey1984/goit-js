@@ -25,7 +25,7 @@ function searchCountry(e) {
   clearSearchList();
   e.preventDefault();
 
-  const searchQuery = e.originalTarget.value;
+  let searchQuery = e.target.value;
 
   countryService.fetchCountry(searchQuery).then(data => {
     console.log(data);
@@ -36,8 +36,7 @@ function searchCountry(e) {
     }
     if (data.length === 1) {
       const markup = buildItemCard(data);
-      insertSearchList(markup);
-      searchQuery = '';
+      insertSearchCard(markup);
     }
     if (data.length >= 1 && data.length <= 10) {
       const markup = buildSearchList(data);
@@ -52,6 +51,10 @@ function clearSearchList() {
 
 function insertSearchList(markup) {
   refs.inputResult.insertAdjacentHTML('beforeend', markup);
+}
+
+function insertSearchCard(markup) {
+  refs.countryCard.insertAdjacentHTML('beforeend', markup);
 }
 
 function buildSearchList(items) {
