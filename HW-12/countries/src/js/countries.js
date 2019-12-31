@@ -27,6 +27,9 @@ function searchCountry(e) {
   e.preventDefault();
 
   let searchQuery = e.target.value;
+  if (searchQuery === '') {
+    return;
+  }
 
   countryService.fetchCountry(searchQuery).then(data => {
     console.log(data);

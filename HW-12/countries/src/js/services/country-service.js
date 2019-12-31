@@ -11,5 +11,8 @@ export default {
         return data;
       }
     });
+    /*       .catch(error => {
+        return '';
+      }); */
   },
 };
