@@ -3,13 +3,13 @@ const resource = '/name/';
 
 export default {
   fetchCountry(searchQuery) {
-    return fetch(baseUrl + resource + searchQuery)
-      .then(response => {
+    return fetch(baseUrl + resource + searchQuery).then(function(response) {
+      if (response.ok) {
         return response.json();
-      })
-      .catch(error => {
+      } else {
         let data = [];
         return data;
-      });
+      }
+    });
   },
 };

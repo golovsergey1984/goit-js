@@ -28,28 +28,26 @@ function searchCountry(e) {
 
   let searchQuery = e.target.value;
 
-  countryService
-    .fetchCountry(searchQuery)
-    .then(data => {
-      /* console.log(data); */
-      if (data.length > 10) {
-        PNotify.error({
-          text: 'Too many matches found. Please, enter a more specfic query!',
-        });
-      }
-      if (data.length === 1) {
-        const markup = buildItemCard(data);
-        insertSearchCard(markup);
-      }
-      if (data.length >= 1 && data.length <= 10) {
-        const markup = buildSearchList(data);
-        insertSearchList(markup);
-      }
-    })
-    .catch(err => {
+  countryService.fetchCountry(searchQuery).then(data => {
+    console.log(data);
+    if (data.length > 10) {
+      PNotify.error({
+        text: 'Too many matches found. Please, enter a more specfic query!',
+      });
+    }
+    if (data.length === 1) {
+      const markup = buildItemCard(data);
+      insertSearchCard(markup);
+    }
+    if (data.length >= 1 && data.length <= 10) {
+      const markup = buildSearchList(data);
+      insertSearchList(markup);
+    }
+  });
+  /*    .catch(err => {
       let data = [];
       return data;
-    });
+    }); */
 }
 
 function empty(data) {
