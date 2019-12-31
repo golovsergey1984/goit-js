@@ -5,12 +5,11 @@ export default {
   fetchCountry(searchQuery) {
     return fetch(baseUrl + resource + searchQuery)
       .then(response => {
-        console.log(response);
-
         return response.json();
       })
       .catch(error => {
-        console.warn(error);
+        let data = [];
+        return data;
       });
   },
 };

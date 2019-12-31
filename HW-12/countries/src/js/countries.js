@@ -22,27 +22,44 @@ let debounced = _.debounce(searchCountry, 500);
 refs.countryChoice.addEventListener('input', debounced);
 
 function searchCountry(e) {
+  clearCountryCard();
   clearSearchList();
   e.preventDefault();
 
   let searchQuery = e.target.value;
 
-  countryService.fetchCountry(searchQuery).then(data => {
-    console.log(data);
-    if (data.length > 10) {
-      PNotify.error({
-        text: 'Too many matches found. Please, enter a more specfic query!',
-      });
-    }
-    if (data.length === 1) {
-      const markup = buildItemCard(data);
-      insertSearchCard(markup);
-    }
-    if (data.length >= 1 && data.length <= 10) {
-      const markup = buildSearchList(data);
-      insertSearchList(markup);
-    }
-  });
+  countryService
+    .fetchCountry(searchQuery)
+    .then(data => {
+      /* console.log(data); */
+      if (data.length > 10) {
+        PNotify.error({
+          text: 'Too many matches found. Please, enter a more specfic query!',
+        });
+      }
+      if (data.length === 1) {
+        const markup = buildItemCard(data);
+        insertSearchCard(markup);
+      }
+      if (data.length >= 1 && data.length <= 10) {
+        const markup = buildSearchList(data);
+        insertSearchList(markup);
+      }
+    })
+    .catch(err => {
+      let data = [];
+      return data;
+    });
+}
+
+function empty(data) {
+  data[0] = 1;
+  return data;
+  console.log('Error');
+}
+
+function clearCountryCard() {
+  refs.countryCard.innerHTML = '';
 }
 
 function clearSearchList() {
