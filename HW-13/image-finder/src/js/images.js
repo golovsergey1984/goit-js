@@ -1,16 +1,43 @@
 import imagesApi from '../api/images.api';
+import restResultTemplate from '../template/result-images.hbs';
+import PNotify from 'pnotify/dist/es/PNotify';
+import PNotifyButtons from 'pnotify/dist/es/PNotifyButtons';
+import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
+PNotify.defaults.styling = 'material';
+PNotify.defaults.icons = 'material';
 
 const refs = {
   searchForm: document.getElementById('search-form'),
-  inputList: document.getElementById('images-list'),
+  inputResult: document.querySelector('.gallery'),
+  loadMoreBtn: document.querySelector('button[data-action="load more"]'),
 };
 
 refs.searchForm.addEventListener('submit', searchFormSubmitHandler);
+refs.loadMoreBtn.addEventListener('click', loadMoreImagesHandler);
 
 function searchFormSubmitHandler(e) {
   e.preventDefault();
-  console.dir(e.currentTarget);
-  const searchQuery = e.currentTarget.elements.query.value;
-  console.log(searchQuery);
-  imagesApi.fetchImages(searchQuery);
+  clearSearchList();
+  const inputValue = e.currentTarget.elements.query.value;
+  imagesApi.resetPage();
+
+  imagesApi.searchQuery = inputValue;
+
+  imagesApi.fetchImages().then(insertGridList);
+}
+
+function insertGridList(items) {
+  const markup = restResultTemplate(items);
+  refs.inputResult.insertAdjacentHTML('beforeend', markup);
+}
+
+function loadMoreImagesHandler() {
+  imagesApi.fetchImages().then(insertGridList);
+  PNotify.success({
+    text: 'new pictures uploaded successfully',
+  });
+}
+
+function clearSearchList() {
+  refs.inputResult.innerHTML = '';
 }
