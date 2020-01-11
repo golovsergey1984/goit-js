@@ -51,7 +51,8 @@ const infScrollInstance = new infiniteScroll(feedContainer, {
       '&q=' +
       inputValue +
       '&page=' +
-      this.pageIndex
+      this.pageIndex +
+      '&per_page=12'
     );
   },
 });
