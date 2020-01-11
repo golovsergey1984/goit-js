@@ -30,7 +30,13 @@ function listener(e) {
   const input = form.elements.query;
   inputValue = input.value;
   console.log(inputValue);
-  infScrollInstance.loadNextPage();
+  if (inputValue === '') {
+    PNotify.error({
+      text: 'You did not match any topic!',
+    });
+  } else {
+    infScrollInstance.loadNextPage();
+  }
 }
 
 const infScrollInstance = new infiniteScroll(feedContainer, {
