@@ -19,11 +19,17 @@ function searchFormSubmitHandler(e) {
   e.preventDefault();
   clearSearchList();
   const inputValue = e.currentTarget.elements.query.value;
-  imagesApi.resetPage();
+  if (inputValue === '') {
+    PNotify.error({
+      text: 'You did not match any topic!',
+    });
+  } else {
+    imagesApi.resetPage();
 
-  imagesApi.searchQuery = inputValue;
+    imagesApi.searchQuery = inputValue;
 
-  imagesApi.fetchImages().then(insertGridList);
+    imagesApi.fetchImages().then(insertGridList);
+  }
 }
 
 function insertGridList(items) {
