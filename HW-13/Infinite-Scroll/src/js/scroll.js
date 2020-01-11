@@ -34,6 +34,7 @@ function listener(e) {
     PNotify.error({
       text: 'You did not match any topic!',
     });
+    return;
   } else {
     infScrollInstance.loadNextPage();
   }
@@ -60,7 +61,12 @@ infScrollInstance.on('load', response => {
   const items = images.hits;
 
   const markup = items.map(item => imageTemplate(item)).join('');
-
+  if (markup === '') {
+    PNotify.notice({
+      text: 'Tere is no matches with your request. Please, enter another topic',
+    });
+    return;
+  }
   const proxyEL = document.createElement('div');
   proxyEL.innerHTML = markup;
 
